@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/comments/random', [App\Http\Controllers\GreetingController::class, 'random']);
+Route::get('/comments/{msg}', [App\Http\Controllers\GreetingController::class, 'freeword']);
+Route::get('/comments/{time}', [App\Http\Controllers\GreetingController::class, 'greeting']);
+
